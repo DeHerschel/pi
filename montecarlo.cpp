@@ -48,16 +48,13 @@ int main()
 		 << "  ║                         points:   " << points;
 	cout << endl
 		 << "  ╚════════════════════════════════════════════════════════════════════════════════════════╝";
-
 	double radius = 1;
 	srand((unsigned)time(0)); // RANDOM
 	double x; 
 	double y;
-
 	double inside = 0; // point in the circle
 	int repetitions = 10; // repetitiosn of the method
 	double pi_array[repetitions]; 
-
 	for (int j = 0; j < repetitions; j++)
 	{
 		for (int i = 0; i < points; i++)
@@ -73,9 +70,7 @@ int main()
 		}
 		pi_array[j] = 4 * inside / points; // PI 
 		inside = 0;
-
 	}
-
 	double pi = 0;
 	double error = 0;
 	// average of all results
@@ -89,8 +84,6 @@ int main()
 		error = error + pow(pi - pi_array[j], 2) / repetitions;
 	}
 	error = sqrt(error);
-
-
 	cout.precision(15); // digits to display
 
 	cout << endl
@@ -108,6 +101,5 @@ int main()
 	cout << endl
 		 << "  ╚════════════════════════════════════════════════════════════════════════════════════════╝" << endl
 		 << endl;
-
-	return 0; // Y hemos terminado. Cerramos el chiringuito.
+	return 0;
 }
