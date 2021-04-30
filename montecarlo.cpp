@@ -45,7 +45,7 @@ int main()
 	cout << endl
 		 << "  ╔════════════════════════════════════════════════════════════════════════════════════════╗";
 	cout << endl
-		 << "  ║                         pointsúmero de 'dardos' a lanzar :   " << points;
+		 << "  ║                         points:   " << points;
 	cout << endl
 		 << "  ╚════════════════════════════════════════════════════════════════════════════════════════╝";
 
@@ -102,7 +102,7 @@ int main()
 		 << "  ║";
 	cout << endl
 		 << "  ║                "
-		 << "o, dicho de otra manera, el valor de pi se encuentra entre";
+		 << "or, the pi value is between";
 	cout << endl
 		 << "  ║                       " << pi + error << "   y   " << pi - error;
 	cout << endl
