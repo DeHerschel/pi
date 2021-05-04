@@ -1,2 +1,2 @@
 # pi
-methods to calculate PI to learn c++
+methods to calculate PI 
