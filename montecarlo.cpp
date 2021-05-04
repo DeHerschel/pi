@@ -41,36 +41,49 @@ using namespace std;
 
 int main()
 {
-	double points = 178333232; // NUMBER OF RANDOM POINTS
+	double points = 178674533; // NUMBER OF RANDOM POINTS
 	cout << endl
-		 << "  ╔════════════════════════════════════════════════════════════════════════════════════════╗";
+		 << "  --------------------------------------------------------------------------------------------";
 	cout << endl
-		 << "  ║                         points:   " << points;
+		 << "                            points :   " << points;
 	cout << endl
-		 << "  ╚════════════════════════════════════════════════════════════════════════════════════════╝";
+		 << "  ------------------------------------------------------------------------------------------";
+
 	double radius = 1;
 	srand((unsigned)time(0)); // RANDOM
 	double x; 
 	double y;
+
 	double inside = 0; // point in the circle
 	int repetitions = 10; // repetitiosn of the method
 	double pi_array[repetitions]; 
+
 	for (int j = 0; j < repetitions; j++)
 	{
 		for (int i = 0; i < points; i++)
 		{ 
-			//random points (between -r ad r)
+			/* random points (between -r and r)
 			x = (-radius) + ((double)rand() / (double)RAND_MAX) * (radius - (-radius));
 			y = (-radius) + ((double)rand() / (double)RAND_MAX) * (radius - (-radius));
-
+			*/
+			/* random between 0 and r.
+			This is like putting points only in a quarter part of the square.
+			So, later, calculating pi we need to multiply per 4 the points inside.
+			This make the program faster...
+			*/
+			x = ((double)rand() / (double)RAND_MAX) * radius;
+			y = ((double)rand() / (double)RAND_MAX) * radius;
+		
 			if (x * x + y * y < radius * radius) //inside?
 			{
 				inside++;
 			}
 		}
-		pi_array[j] = inside / points; // PI 
+		pi_array[j] = 4 * inside / points; // PI. Quit the 4 if chosing points between -r and r
 		inside = 0;
+
 	}
+
 	double pi = 0;
 	double error = 0;
 	// average of all results
@@ -84,22 +97,26 @@ int main()
 		error = error + pow(pi - pi_array[j], 2) / repetitions;
 	}
 	error = sqrt(error);
+
+
 	cout.precision(15); // digits to display
 
 	cout << endl
-		 << "  ╔════════════════════════════════════════════════════════════════════════════════════════╗";
+		 << "  ------------------------------------------------------------------------------";
 	cout << endl
-		 << "  ║                       "
+		 << "                          "
 		 << "Pi = " << pi << "  +/-  " << error;
 	cout << endl
-		 << "  ║";
+		 << "   ";
 	cout << endl
-		 << "  ║                "
-		 << "or, the pi value is between";
+		 << "                   "
+		 << "o, dicho de otra manera, el valor de pi se encuentra entre";
 	cout << endl
-		 << "  ║                       " << pi + error << "   y   " << pi - error;
+		 << "                          " << pi + error << "   y   " << pi - error;
 	cout << endl
-		 << "  ╚════════════════════════════════════════════════════════════════════════════════════════╝" << endl
+		 << "  ---------------------------------------------------------------------------" << endl
 		 << endl;
-	return 0;
+
+	return 0; 
 }
+
