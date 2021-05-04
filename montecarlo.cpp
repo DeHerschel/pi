@@ -68,7 +68,7 @@ int main()
 				inside++;
 			}
 		}
-		pi_array[j] = 4 * inside / points; // PI 
+		pi_array[j] = inside / points; // PI 
 		inside = 0;
 	}
 	double pi = 0;
