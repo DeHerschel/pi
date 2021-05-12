@@ -110,9 +110,9 @@ int main()
 		 << "   ";
 	cout << endl
 		 << "                   "
-		 << "o, dicho de otra manera, el valor de pi se encuentra entre";
+		 << "or, pi is between";
 	cout << endl
-		 << "                          " << pi + error << "   y   " << pi - error;
+		 << "                          " << pi + error << "   and   " << pi - error;
 	cout << endl
 		 << "  ---------------------------------------------------------------------------" << endl
 		 << endl;
